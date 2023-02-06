@@ -1,0 +1,47 @@
+
+
+            /* player turns and points  */
+            .players{
+                height: 10%;
+                margin: 2px;
+                display: flex;
+                justify-content: space-between  ;
+            }
+
+                .playerPoints{
+                    width: 45%;
+                    border: inset 2px grey;
+                    background-color: white;
+                }
+
+                /* restart button  */
+                .reStart{
+                    height: 10%;
+                    margin-right: 2px;
+                    border: inset 2px grey;
+                    background-color: rgb(103, 103, 103);
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                }
+
+                    .reStartButton{
+                        width: 100%;
+                        background-color: rgb(253, 154, 154);
+                    }
+
+            /* table board  */
+                .tableBoard{
+                    height: 330px;
+                    width: 330px;
+                    margin: 2px;
+                    border: inset 2px gray;
+                    display: grid;
+                    grid-template-columns: repeat(3, 110px);
+                    grid-template-rows: repeat(3, 110px);
+                    background-size: cover;
+                    background-image: url(../assets/tablero.jpg);
+                }
+
+
+
