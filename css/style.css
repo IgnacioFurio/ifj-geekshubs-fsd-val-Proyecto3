@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(1,130,129) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+}
+
+
+
+/* user interface of the board game*/
+
+    .window {
+        height: 95vh;
+        width: 95vw;
+        margin: 10px;
+        background-color: gray;
+        border: outset 2px grey;
+        box-shadow: unset solid black;
+    }
+
+        /* bar that simulates w95 window */
+        .TopBar{
+            height: 5%;  
+            margin: 1px;          
+            background-image: linear-gradient(
+                to right,
+                rgb(0, 0, 146),
+                rgb(3, 3, 218)
+            );
+            }
+
+            /* icons */
+
+            /* player turns and points  */
+            .Players{
+                height: 10%;
+                margin: 2px;
+                display: flex;
+                justify-content: space-between  ;
+            }
+
+                .Player{
+                    width: 45%;
+                    border: inset 2px grey;
+                    background-color: white;
+                }
+
+                /* .PlayerTwo{
+                    width: 45%;
+                    background-color: blue;
+                } */
+
+            /* table board  */
+
+
+
+
