@@ -20,7 +20,7 @@ body{
     }
 
         /* bar that simulates w95 window */
-        .TopBar{
+        .topBar{
             height: 5%;  
             margin: 1px;          
             background-image: linear-gradient(
@@ -33,23 +33,27 @@ body{
             /* icons */
 
             /* player turns and points  */
-            .Players{
+            .players{
                 height: 10%;
                 margin: 2px;
                 display: flex;
                 justify-content: space-between  ;
             }
 
-                .Player{
+                .playerPoints{
                     width: 45%;
                     border: inset 2px grey;
                     background-color: white;
                 }
 
-                /* .PlayerTwo{
-                    width: 45%;
-                    background-color: blue;
-                } */
+                /* restart button  */
+                .reStart{
+                    height: 10%;
+                    margin-right: 2px;
+                    border: inset 2px grey;
+                    background-color: rgb(103, 103, 103);
+
+                }
 
             /* table board  */
 
