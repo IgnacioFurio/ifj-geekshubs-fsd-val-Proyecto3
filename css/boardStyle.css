@@ -1,15 +1,62 @@
+.container{
+    width: 100%;
+    height: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+            /* table board  */
+                .tableBoard{
+                    width:  50%;
+                    margin: 2px;
+                    border: inset 2px gray;
+                    display: grid;
+                    grid-template-columns: repeat(3, auto);
+                    justify-content: center;
+                    align-content: center;
+                }
+
+                    .cellDesign{
+                        height: 8em;
+                        width: 8em;
+                        background-color: aquamarine;
+                    }
+                    .cellDesign:hover{
+                        transition: 0.3s;
+                        background-color: aqua;
+                    }
+        
+        /* user interface */
+
+        .interface{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
 
             /* player turns and points  */
             .players{
-                height: 10%;
+                height: 30%;
+                margin: 1em;
                 margin: 2px;
                 display: flex;
-                justify-content: space-between  ;
+                align-content: center;
+                padding-bottom: 1em;
             }
+                .names{
+                    text-align: center;
+                    font-weight: 600;
+                    font-family: Arial, Helvetica, sans-serif;
+
+                }
 
                 .playerPoints{
+                    height: 3em;
                     width: 45%;
+                    margin: 3%;
                     border: inset 2px grey;
                     background-color: white;
                 }
@@ -17,31 +64,25 @@
                 /* restart button  */
                 .reStart{
                     height: 10%;
+                    width: 100%;
                     margin-right: 2px;
-                    border: inset 2px grey;
-                    background-color: rgb(103, 103, 103);
                     display: flex;
                     justify-content: center;
                     align-content: center;
                 }
 
-                    .reStartButton{
+                    .linkWidth{
                         width: 100%;
-                        background-color: rgb(253, 154, 154);
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
                     }
 
-            /* table board  */
-                .tableBoard{
-                    height: 330px;
-                    width: 330px;
-                    margin: 2px;
-                    border: inset 2px gray;
-                    display: grid;
-                    grid-template-columns: repeat(3, 110px);
-                    grid-template-rows: repeat(3, 110px);
-                    background-size: cover;
-                    background-image: url(../assets/tablero.jpg);
-                }
-
-
-
+                    .reStartButton{
+                        height: 3em;
+                        width: 50%;
+                        margin: 1em;
+                        background-color: rgb(253, 154, 154);
+                        border: outset rgb(253, 154, 154);
+                        cursor: pointer;
+                    }

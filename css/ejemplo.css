@@ -1,0 +1,34 @@
+body {
+    margin:0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableroContainer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: lightcoral;
+}
+
+.cellDesign {
+    height: 7em;
+    width: 7em;
+    background-color: beige;
+    margin: 1em;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.cellDesign:hover{
+    
+    scale: 1.1;
+
+    transition: 0.3s;
+
+}

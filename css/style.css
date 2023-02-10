@@ -6,11 +6,11 @@ body{
     margin: 0%;
 }
 
-/* user interface of the board game*/
+/* windows 95 layout*/
 
     .window {
+        width: 95%;
         height: 95vh;
-        width: 95vw;
         margin: 10px;
         background-color: rgb(170, 169, 169);
         border: outset 2px rgb(170, 169, 169)rey;
