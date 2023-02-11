@@ -29,7 +29,7 @@
                 }
 
                 .names{
-                    height: 50%;
+                    height: 40%;
                     text-align: center;
                     font-weight: 600;
                     border-bottom: 1px inset grey;
@@ -38,7 +38,7 @@
                 }
 
                 .tokensSide{
-                    height: 50%;
+                    height: 60%;
                     text-align: center;
                     font-weight: 400;
                     border-bottom: 1px inset grey;
