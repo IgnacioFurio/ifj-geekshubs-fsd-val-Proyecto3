@@ -32,11 +32,30 @@ body{
 
                 /* Simulating the window name and icon from W95 OS */
                 .windowInfo{
-                    
-
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 1px;
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
                 }
+                    .appIcon{
+                        height: 18px;
+                        width: 18px;
+                        padding: 0%;
+                    }
 
-                /* icons */
+                    .appName{
+                        color: white;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        margin-left: 5px;
+
+                    }
+
+                /* icon */
                 .closeWindow{
                     height: 18px;
                     width: 18px;
