@@ -1,0 +1,44 @@
+    /* input for the player's name  */
+    .inputName{
+        width: 50%;
+        height: 4em;
+        margin-top: 4em;
+        margin-bottom: 4em;
+        background-color: grey;
+        border: inset 2px rgb(166, 166, 166);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .player{
+        height: 90%;
+        width: 85%;
+        margin: 1px;
+        background-color: rgb(222, 220, 220);
+        border: inset rgb(146, 145, 145) 2px;
+    }
+    .token{
+        margin-left: 1em;
+        margin-right: 1em;
+        height: 3em;
+    }
+
+    /* start game button  */
+
+    .startGame{
+        height: 4em;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+        .startGameButton{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(96, 195, 34);
+            border: outset rgb(114, 231, 41);
+            cursor: pointer;
+        }
