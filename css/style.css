@@ -1,26 +1,28 @@
 body{
     background-color: rgb(1,130,129) ;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0%;
+    padding: 0%;
 }
 
 /* windows 95 layout*/
 
     .window {
         width: 95%;
-        height: 93vh;
-        margin: 10px;
+        height: 93%;
+        margin: 1em;
         background-color: rgb(170, 169, 169);
-        border: outset 2px rgb(170, 169, 169)rey;
+        border: outset 2px rgb(170, 169, 169);
         box-shadow: unset solid black;
     }
 
         /* bar that simulates w95 window */
         .topBar{
-            height: 20px;  
-            margin: 1px;          
+            height: 20px;         
             background-image: linear-gradient(
                 to right,
                 rgb(0, 0, 146),
@@ -55,22 +57,57 @@ body{
 
                     }
 
-                /* icon */
-                .closeWindow{
-                    height: 18px;
-                    width: 18px;
-                    padding: 0px;
-                    margin: 1px;
-                    background-color: rgb(170, 169, 169);
-                    font-weight: 600;
-                }
+                    /* icon */
+                    .closeWindow{
+                        height: 18px;
+                        width: 18px;
+                        padding: 0px;
+                        margin: 1px;
+                        background-color: rgb(170, 169, 169);
+                        border: outset 2px rgb(170, 169, 169);
+                        font-weight: 600;
+                    }
 
-                /* main container  */
-                .container{
-                    width: 100%;
-                    height: 95%;
+        /* main container  */
+        .container{
+            width: 100%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* windows task bar  */
+        .taskBar{
+            height: 25px;
+            width: 100%;
+            background-color: rgb(170, 169, 169);
+            border-top: outset 2px rgb(222, 220, 220);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        /* w95 start button  */
+        .homeW95{
+            height: 23px;
+            display: flex;
+            flex-direction: row;
+            border: outset 2px rgb(222, 220, 220);
+        }
+
+                .iconW95{
+                    height: 22px;
+                    width: 22px;
+                    margin-left: 2px;
+                }
+                .startW95{
+                    color: black;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: large;
+                    text-transform: capitalize;
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                    align-items: end;
+                    margin-left: 5px;
+                    margin-right: 5px;
                 }

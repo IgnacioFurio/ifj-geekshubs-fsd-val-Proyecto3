@@ -1,1 +1,15 @@
+.gameIcon{
+    height: 3em;
+    width: 3em;
+    border-radius: 2%;
+    color: white;
+    text-align: center;
 
+}
+p{
+    margin: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: small;
+}

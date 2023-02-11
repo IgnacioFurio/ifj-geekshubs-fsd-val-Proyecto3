@@ -16,6 +16,9 @@
         height: 90%;
         width: 85%;
         margin: 1px;
+        font-size: x-large;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
         background-color: rgb(222, 220, 220);
         border: inset rgb(146, 145, 145) 2px;
     }
