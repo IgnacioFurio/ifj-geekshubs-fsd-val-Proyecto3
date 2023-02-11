@@ -29,22 +29,22 @@
         <div class="container">
             <!-- input player 1  -->
             <div class="inputName">
-                <input class="player" type="text" minlength="1" maxlength="12" placeholder="Set Player's Name">
+                <input id="Player1" class="player" type="text" minlength="1" maxlength="12" placeholder="Set Player's Name">
                 <div class="token">
                     <img src="../assets/circle.png" class="token" alt="">
                 </div>
             </div>
             <!-- button start game  -->
             <div class="startGame">
-                <a href="../pages/gameBoard.html" style="color: black; text-decoration: none; font-weight: 900; font-size: larger;">
-                <button class="startGameButton">
+                <!-- <a href="../pages/gameBoard.html" style="color: black; text-decoration: none; font-weight: 900; font-size: larger;"> -->
+                <button class="startGameButton" onclick="GuardaNombres()">
                     START GAME
                 </button>
-                </a> 
+                <!-- </a>  -->
             </div>
             <!-- input player 2 -->
             <div class="inputName">
-                <input class="player" type="text" minlength="1" maxlength="12" placeholder="Set Player's Name">
+                <input id="Player2" class="player" type="text" minlength="1" maxlength="12" placeholder="Set Player's Name">
                 <div class="token">
                     <img src="../assets/cross.png" class="token" alt="">
                 </div>
@@ -66,5 +66,6 @@
             <div class="startW95">tic tac toe</div>
         </div>
     </div>
+    <script src="../js/namesStorage.js"></script>
 </body>
 </html>
