@@ -77,7 +77,8 @@
                 .tableBoard{
                     width:  50%;
                     margin: 2px;
-                    border: inset 2px gray;
+                    border: inset 2px grey;
+                    background-color: rgb(146, 145, 145);
                     display: grid;
                     grid-template-columns: repeat(3, auto);
                     justify-content: center;
@@ -87,10 +88,11 @@
                     .cellDesign{
                         height: 9em;
                         width: 9em;
-                        background-color: aquamarine;
+                        background-color: rgb(222, 220, 220);
+                        border: solid 2px rgb(54, 54, 54);
                     }
                     .cellDesign:hover{
                         transition: 0.3s;
-                        background-color: aqua;
+                        background-color: rgb(146, 145, 145);
                     }
         
