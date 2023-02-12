@@ -1,7 +1,15 @@
-        /* user interface */
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* user interface */
 
         .interface{
             width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
         }
 
                 /* restart button  */

@@ -1,52 +1,37 @@
-/* main container  */
-
 .container{
     display: flex;
     flex-direction: row;
 }
 
-
 /* user interface */
 
-        .interface{
-            width: 95%;
-            height: 100%;
+.interface{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+    .players{
+        height: 67%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        .playerPoints{
+            width: 70% ;
         }
-
-            /* player turns and points  */
-
-            .players{
-                height: 50%;
-                width: 80%;
-                margin: 0%;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .playerPoints{
-                height: 3em;
-                width: 90%;
-            }
-
-            .names{
-                font-size: medium;
-            }
-            .tokensSide{
-                font-size: medium;
-            }
 
         /* restart button  */
         .reStart{
-            height: 50%;
-            margin: 0%;
-        }
-        .reStartButton{
-            height: 3em;
-            font-size: medium;
+            height: 33%;
+            width: 90%;
         }
 
             /* table board  */
             .tableBoard{
-                width:  100%;
+                height: 90%;
+                width:  90%;
                 margin: 2px;
             }
                     .cellDesign{

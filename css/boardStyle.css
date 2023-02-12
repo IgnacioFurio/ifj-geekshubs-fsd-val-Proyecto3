@@ -1,5 +1,8 @@
 
-
+.container{
+    display: flex;
+    flex-direction: column;
+}
         /* user interface */
 
         .interface{
@@ -86,8 +89,8 @@
                 }
 
                     .cellDesign{
-                        height: 9em;
-                        width: 9em;
+                        height: 8em;
+                        width: 8em;
                         background-color: rgb(222, 220, 220);
                         border: solid 2px rgb(54, 54, 54);
                     }
