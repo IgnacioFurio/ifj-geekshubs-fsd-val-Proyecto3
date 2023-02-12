@@ -1,0 +1,55 @@
+/* main container  */
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* user interface */
+
+        .interface{
+            width: 95%;
+            height: 100%;
+        }
+
+            /* player turns and points  */
+
+            .players{
+                height: 50%;
+                width: 80%;
+                margin: 0%;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .playerPoints{
+                height: 3em;
+                width: 90%;
+            }
+
+            .names{
+                font-size: medium;
+            }
+            .tokensSide{
+                font-size: medium;
+            }
+
+        /* restart button  */
+        .reStart{
+            height: 50%;
+            margin: 0%;
+        }
+        .reStartButton{
+            height: 3em;
+            font-size: medium;
+        }
+
+            /* table board  */
+            .tableBoard{
+                width:  100%;
+                margin: 2px;
+            }
+                    .cellDesign{
+                        height: 4.5em;
+                        width: 4.5em;
+                    }

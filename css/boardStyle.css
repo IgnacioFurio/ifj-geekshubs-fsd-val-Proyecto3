@@ -91,8 +91,4 @@
                         background-color: rgb(222, 220, 220);
                         border: solid 2px rgb(54, 54, 54);
                     }
-                    .cellDesign:hover{
-                        transition: 0.3s;
-                        background-color: rgb(146, 145, 145);
-                    }
-        
+

@@ -1,0 +1,26 @@
+    /* input for the player's name  */
+    .inputName{
+        width: 90%;
+        height: 3em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .player{
+        font-size: xx-large;
+    }
+    .token{
+        margin-left: 1em;
+        margin-right: 1em;
+        height: 2em;
+    }
+
+    /* start game button  */
+    .startGame{
+        width: 40%;
+    }
+
+    .startGameButton{
+        font-size: x-large;
+        font-weight: 700;
+    }

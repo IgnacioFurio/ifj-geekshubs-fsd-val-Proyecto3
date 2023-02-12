@@ -1,7 +1,7 @@
     /* input for the player's name  */
     .inputName{
         width: 80%;
-        height: 2em;
+        height: 3em;
     }
 
         .player{
@@ -14,7 +14,8 @@
 
         /* start game button  */
         .startGame{
-            height: 3em;
+            font-size: medium;
+            height: 5em;
         }
 
 
