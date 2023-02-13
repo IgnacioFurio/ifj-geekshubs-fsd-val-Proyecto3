@@ -28,5 +28,5 @@ const GuardaNombres = ()=> {
 
 
     // con esto abrimos la ventana de juego si todo esta rellenado 
-    window.open("../pages/gameBoard.html", "_self")
+    window.location.href = "../pages/gameBoard.html", "_self";
 };
