@@ -95,3 +95,9 @@
                         border: solid 2px rgb(54, 54, 54);
                     }
 
+/* tokens size  */
+.token{
+    width: 6em;
+    height: 6em;
+    margin: 1em;
+}

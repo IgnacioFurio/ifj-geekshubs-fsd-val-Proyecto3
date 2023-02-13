@@ -38,3 +38,10 @@
                         height: 4.5em;
                         width: 4.5em;
                     }
+
+/* tokens size  */
+.token{
+    width: 2.5em;
+    height: 2.5em;
+    margin: 1em;
+}
