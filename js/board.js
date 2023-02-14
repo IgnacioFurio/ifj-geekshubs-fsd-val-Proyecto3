@@ -109,7 +109,7 @@ board.map(
     (cell) => {
         cell.addEventListener('click', () => {
             // to set tokens before both playes has 3 tokens in game 
-            if(cell.innerHTML === "" || tokenP1 > 0 || tokenP2 > 0){
+            if(cell.innerHTML === "" && turn <= 6){
                 // to paint the cell 
                 turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
@@ -121,6 +121,7 @@ board.map(
                 turn++
                 // instructions for players
                 info()
+                console.log(turn)
             }
             // to retire a "O" token 
             else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && turn % 2 !== 0  && tokenP1 === 0){
@@ -143,7 +144,31 @@ board.map(
                 tokenP2 ++
                 // instructions for players
                 info()
-            }
+            }else if(cell.innerHTML === "" && turn % 2 !== 0 && tokenP1 === 1 && turn > 6){
+                // to paint the cell 
+                cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">';
+                // to set place in the game array
+                game[cell.id] = "O";
+                // checking winner 
+                winner()
+                // take 1 token from the current player 
+                tokenP1--;    
+                turn++
+                // instructions for players
+                info()
+            }else if(cell.innerHTML === "" && turn % 2 === 0 && tokenP2 === 1 && turn > 6){
+                // to paint the cell 
+                cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
+                // to set place in the game array
+                game[cell.id] = "X";
+                // checking winner 
+                winner()
+                // take 1 token from the current player 
+                tokenP2--;    
+                turn++
+                // instructions for players
+                info()
+            };;
         })
     }
 )
