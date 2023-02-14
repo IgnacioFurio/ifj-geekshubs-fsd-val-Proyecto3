@@ -23,10 +23,10 @@
             width: 70% ;
         }
 
-        /* restart button  */
-        .reStart{
+        /*buttons  */
+        .shapeButtons{
             height: 33%;
-            width: 90%;
+            width: 100%;
         }
 
             /* table board  */

@@ -1,5 +1,50 @@
-.nameWinner{
+.message{
     text-align: center;
-    font-size: xx-large;
+    font-size: 3em;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0.5em;
+    text-transform: uppercase;
 }
+.nameWinner{
+    font-size: 8em;
+    color: rgb(229, 229, 229);
+}
+/*buttons  */
+
+.buttonsContainer{
+    margin: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+    .shapeButtons{
+        height: 2em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+        .linkWidth{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+            .styleButton{
+                height: 3em;
+                width: 50%;
+                margin: 1em;
+                cursor: pointer;
+            }
+                /* button new match  */
+                .color1{
+                    background-color: rgb(96, 195, 34);
+                    border: outset rgb(114, 231, 41);
+                }
+                /* button new game  */
+                .color2{
+                    background-color: rgb(253, 154, 154);
+                    border: outset rgb(253, 165, 165);
+                }

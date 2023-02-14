@@ -16,7 +16,6 @@
             /* player turns and points  */
             .players{
                 height: 30%;
-                margin: 1em;
                 display: flex;
                 align-content: center;
                 padding-bottom: 1em;
@@ -49,11 +48,17 @@
                     font-family: Arial, Helvetica, sans-serif;
                 }
 
-                /* restart button  */
-                .reStart{
+                /*buttons  */
+
+            .buttonsContainer{
+                margin: 1em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+                .shapeButtons{
                     height: 2em;
                     width: 100%;
-                    margin: 1em;
                     display: flex;
                     justify-content: center;
                     align-content: center;
@@ -66,14 +71,22 @@
                         align-content: center;
                     }
 
-                        .reStartButton{
+                        .styleButton{
                             height: 3em;
                             width: 50%;
                             margin: 1em;
-                            background-color: rgb(253, 154, 154);
-                            border: outset rgb(253, 165, 165);
                             cursor: pointer;
                         }
+                            /* button new match  */
+                            .color1{
+                                background-color: rgb(96, 195, 34);
+                                border: outset rgb(114, 231, 41);
+                            }
+                            /* button new game  */
+                            .color2{
+                                background-color: rgb(253, 154, 154);
+                                border: outset rgb(253, 165, 165);
+                            }
 
                     
             /* table board  */
