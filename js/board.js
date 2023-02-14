@@ -1,3 +1,4 @@
+// SESSION STORAGE 
 // div's captured for setting the names  
 let player1 = document.getElementById("player1")
 let player2 = document.getElementById("player2")
@@ -10,16 +11,12 @@ let name2 = sessionStorage.getItem("Player2Name")
 player1.innerHTML = `${name1}`
 player2.innerHTML = `${name2}`
 
+/////////////////   TIC TAC TOE ////////////////////
 
+// WINNER VALIDATION
 
-// setting board and tokens
-let board = Array.from(document.getElementsByClassName("cellDesign"));
+// array; victory chek 
 
-
-// current board status 
-let game = ["", "", "", "", "", "", "", "", ""]
-
-// victory array to check 
 let victory = [
     [0, 1, 2],
     [3, 4, 5],
@@ -31,7 +28,7 @@ let victory = [
     [2 ,4 ,6],
 ];
 
-// winner function 
+// function: winner 
 
 let playerWinner;
 
@@ -44,11 +41,12 @@ const winner = () => {
         let position0 = game[winCondition[0]];
         let position1 = game[winCondition[1]];
         let position2 = game[winCondition[2]];
+
         // checking if somwone won the game 
         if(position0 === position1 && position1 === position2 && position0 !== ""){
-            // going to the winnes page 
+            // going to the winners page 
             window.location.href = "../pages/winner.html"
-            // setting the winners name 
+            // setting the winners name to session storage
             if(turn % 2 !== 0){
                 playerWinner = name1
                 sessionStorage.setItem("Winner", playerWinner)
@@ -61,84 +59,91 @@ const winner = () => {
 
 };
 
-// setting the basics for the game 
+// INFORMATION FOR THE PLAYERS
 
-let turn = 1;
-
-let token = 1
-
+// initial information
 let infoP1 = document.getElementById("infoP1")
 let infoP2 = document.getElementById("infoP2")
 
 infoP1.innerHTML = "Set a token on the board"
 infoP2.innerHTML = "Wait until your turn"
 
-// information for the players 
+// function: information for the players during the game
 
 const info = () => {
-    console.log(turn)
-    if(turn % 2 !== 0){
+    if(turn % 2 !== 0 && tokenP1 === 0 && turn > 6){
+        infoP1.innerHTML = "Choose a token of your own"
+        infoP2.innerHTML = "Wait until your next turn"
+    }else if(turn % 2 === 0 && tokenP2 === 0 && turn > 6){
+        infoP2.innerHTML = "Choose a token of your own"
         infoP1.innerHTML = "Wait until your next turn"
-        infoP2.innerHTML = "Set a token on the board"
-    }else if (turn % 2 === 0){
+    }else if(turn % 2 !== 0){
         infoP2.innerHTML = "Wait until your next turn"
         infoP1.innerHTML = "Set a token on the board"
+    }else if (turn % 2 === 0){
+        infoP1.innerHTML = "Wait until your next turn"
+        infoP2.innerHTML = "Set a token on the board"
     };
+
+
 };
 
+// DIFFERENT INDEX THAT ARE IMPORTANT TO RUN THE GAME 
 
+let turn = 1;
 
+let tokenP1 = 3
+let tokenP2 = 3
+
+// THE GAME
+
+// building board
+let board = Array.from(document.getElementsByClassName("cellDesign"));
+
+// array: current board status 
+let game = ["", "", "", "", "", "", "", "", ""]
+
+// mapping board 
 
 board.map(
     (cell) => {
         cell.addEventListener('click', () => {
             // to set tokens before both playes has 3 tokens in game 
-            if(cell.innerHTML === "" && turn <= 6){
-                // instructions for players
-                info()
+            if(cell.innerHTML === "" || tokenP1 > 0 || tokenP2 > 0){
                 // to paint the cell 
                 turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
                 turn % 2 !== 0 ? game[cell.id] = "O" : game[cell.id] = "X";
                 // checking winner 
                 winner()
-                turn ++ ;           
+                // take 1 token from the current player 
+                turn % 2 !== 0 ? tokenP1-- : tokenP2--;    
+                turn++
+                // instructions for players
+                info()
             }
             // to retire a "O" token 
-            else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && turn % 2 !== 0 && turn > 6 && token === 1){
-                // instructions for players
-                info()
+            else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && turn % 2 !== 0  && tokenP1 === 0){
                 // to clean the cell 
                 cell.innerHTML = "";
                 // to clean place in the array 
                 game[cell.id] = "";
-
-                token --
+                // give one token to the current player 
+                tokenP1 ++
+                // instructions for players
+                info()
             }
             // to retire a "X" token 
-            else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && turn % 2 === 0 && turn > 6 && token === 1){
-                // instructions for players
-                info()
+            else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && turn % 2 === 0 && turn > 6 && tokenP2 === 0){
                 // to clean the cell 
                 cell.innerHTML = "";
                 // to clean place in the array 
                 game[cell.id] = "";
-                token --
-            }
-            // to set again the token removed (both players)
-            else if (cell.innerHTML === "" && turn > 6 && token === 0){
-                turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
-                // to set place in the game array
-                turn % 2 !== 0 ? game[cell.id] = "O" : game[cell.id] = "X";
-                // checking winner 
-                winner()
+                // give one token to the current player 
+                tokenP2 ++
+                // instructions for players
                 info()
-                turn++
-                token++
-            };
+            }
         })
     }
 )
-
-
-
