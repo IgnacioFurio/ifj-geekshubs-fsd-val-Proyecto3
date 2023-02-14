@@ -15,15 +15,16 @@
                 /* restart button  */
             .buttonsContainer{
                 margin: 0em;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
             }
             
-                .reStart{
+                .shapeButtons{
                     height: 3em;
                     width: 90%;
                 }
+                    .styleButton{
+                        height: 3.5em;
+                        width: 60%;
+                    }
 
             /* table board  */
             .tableBoard{

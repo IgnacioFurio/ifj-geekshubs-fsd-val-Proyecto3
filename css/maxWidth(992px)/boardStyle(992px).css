@@ -24,10 +24,18 @@
         }
 
         /*buttons  */
-        .shapeButtons{
-            height: 33%;
-            width: 100%;
+        .buttonsContainer{
+            margin: 0em;
         }
+        
+            .shapeButtons{
+                height: 3em;
+                width: 90%;
+            }
+                .styleButton{
+                    height: 3.5em;
+                    width: 70%;
+                }
 
             /* table board  */
             .tableBoard{
