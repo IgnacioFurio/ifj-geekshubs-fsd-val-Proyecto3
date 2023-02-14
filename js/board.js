@@ -121,7 +121,6 @@ board.map(
                 turn++
                 // instructions for players
                 info()
-                console.log(turn)
             }
             // to retire a "O" token 
             else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && turn % 2 !== 0  && tokenP1 === 0){
