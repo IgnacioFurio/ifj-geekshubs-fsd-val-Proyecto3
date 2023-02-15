@@ -84,11 +84,10 @@ const winner = () => {
             // going to the winners page 
             window.location.href = "../pages/winner.html"
             // setting the winners name to session storage
-            if(infoTurns.turn % 2 !== 0){
-                console.log(playerWinner)
+            if(infoTurns.turn % 2 === 0){
                 playerWinner = name1
                 sessionStorage.setItem("Winner", playerWinner)
-            }else{
+            }else if(infoTurns.turn % 2 !== 0){
                 playerWinner = name2
                 sessionStorage.setItem("Winner", playerWinner)
             };
@@ -148,7 +147,8 @@ let board = Array.from(document.getElementsByClassName("cellDesign"));
 saveMatchData()
 
 
-// now we can play 
+// TIME TO PLAY
+
 // this info is set here so if you have minimized the window you can see the information as it was 
 // before minimize the window 
 info()
@@ -176,8 +176,6 @@ board.map(
                 game[cell.id] = "";
                 // give one token to the current player 
                 infoTurns.tokenP1 ++
-                // instructions for players
-                // info()
             }
             // to retire a "X" token 
             else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && infoTurns.turn % 2 === 0 && infoTurns.turn > 6 && infoTurns.tokenP2 === 0){
@@ -187,8 +185,6 @@ board.map(
                 game[cell.id] = "";
                 // give one token to the current player 
                 infoTurns.tokenP2 ++
-                // instructions for players
-                // info()
             }else if(cell.innerHTML === "" && infoTurns.turn % 2 !== 0 && infoTurns.tokenP1 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">';
@@ -197,8 +193,6 @@ board.map(
                 // take 1 token from the current player 
                 infoTurns.tokenP1--;    
                 infoTurns.turn++
-                // instructions for players
-                // info()
             }else if(cell.innerHTML === "" && infoTurns.turn % 2 === 0 && infoTurns.tokenP2 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
@@ -207,8 +201,6 @@ board.map(
                 // take 1 token from the current player 
                 infoTurns.tokenP2--;    
                 infoTurns.turn++
-                // instructions for players
-                // info()
             };;
             
             // checking winner 
