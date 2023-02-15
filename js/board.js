@@ -20,26 +20,31 @@ let game = ["", "", "", "", "", "", "", "", ""]
 // in case you minimized the "window" this is all the data of the previous game
 
 const saveMatchData = () => {
-    
-    // take the game board array data saved from session storage
-    game = JSON.parse(sessionStorage.getItem("board"))
-    
-    // take the turn and token object data saved from local storage
-    infoTurns = JSON.parse(sessionStorage.getItem("infoTurns"))
 
-    for(let i = 0 ; i < game.length; i++){
+    let checkMatchData = sessionStorage.getItem("save")
 
-        let setToken = document.getElementById(`${[i]}`)        
-
-        switch(game[i]){
-            case "O":
-                setToken.innerHTML = '<img src="../assets/circle.png" class="token" alt="">'
-            break;
-            case "X":
-                setToken.innerHTML = '<img src="../assets/cross.png" class="token" alt="">'
-            break;
-            default:
-                setToken.innerHTML = ""
+    if (checkMatchData === "save"){
+        
+        // take the game board array data saved from session storage
+        game = JSON.parse(sessionStorage.getItem("board"))
+        
+        // take the turn and token object data saved from local storage
+        infoTurns = JSON.parse(sessionStorage.getItem("infoTurns"))
+        
+        for(let i = 0 ; i < game.length; i++){
+            
+            let setToken = document.getElementById(`${[i]}`)        
+            
+            switch(game[i]){
+                case "O":
+                    setToken.innerHTML = '<img src="../assets/circle.png" class="token" alt="">'
+                    break;
+                case "X":
+                    setToken.innerHTML = '<img src="../assets/cross.png" class="token" alt="">'
+                break;
+                default:
+                    setToken.innerHTML = ""
+            };
         };
     };
     
@@ -62,7 +67,7 @@ let victory = [
 
 // function: winner 
 
-let playerWinner;
+let playerWinner = "";
 
 const winner = () => {    
     // we are going to check every win condition at victory array
@@ -79,7 +84,8 @@ const winner = () => {
             // going to the winners page 
             window.location.href = "../pages/winner.html"
             // setting the winners name to session storage
-            if(turn % 2 !== 0){
+            if(infoTurns.turn % 2 !== 0){
+                console.log(playerWinner)
                 playerWinner = name1
                 sessionStorage.setItem("Winner", playerWinner)
             }else{
@@ -139,14 +145,14 @@ let board = Array.from(document.getElementsByClassName("cellDesign"));
 
 // first step is to check if there was a game going on before minimize the "window" and set the board
 
-let checkMatchData = sessionStorage.getItem("save")
+saveMatchData()
 
-if (checkMatchData === "save"){
-    saveMatchData()
-};
 
 // now we can play 
+// this info is set here so if you have minimized the window you can see the information as it was 
+// before minimize the window 
 info()
+
 board.map(
     (cell) => {
         cell.addEventListener('click', () => {
@@ -158,13 +164,9 @@ board.map(
                 infoTurns.turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
                 infoTurns.turn % 2 !== 0 ? game[cell.id] = "O" : game[cell.id] = "X";
-                // checking winner 
-                winner()
                 // take 1 token from the current player 
                 infoTurns.turn % 2 !== 0 ? infoTurns.tokenP1-- : infoTurns.tokenP2--;    
                 infoTurns.turn++
-                // instructions for players
-                info()
             }
             // to retire a "O" token 
             else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && infoTurns.turn % 2 !== 0  && infoTurns.tokenP1 === 0){
@@ -175,7 +177,7 @@ board.map(
                 // give one token to the current player 
                 infoTurns.tokenP1 ++
                 // instructions for players
-                info()
+                // info()
             }
             // to retire a "X" token 
             else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && infoTurns.turn % 2 === 0 && infoTurns.turn > 6 && infoTurns.tokenP2 === 0){
@@ -186,36 +188,44 @@ board.map(
                 // give one token to the current player 
                 infoTurns.tokenP2 ++
                 // instructions for players
-                info()
+                // info()
             }else if(cell.innerHTML === "" && infoTurns.turn % 2 !== 0 && infoTurns.tokenP1 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">';
                 // to set place in the game array
                 game[cell.id] = "O";
-                // checking winner 
-                winner()
                 // take 1 token from the current player 
                 infoTurns.tokenP1--;    
                 infoTurns.turn++
                 // instructions for players
-                info()
+                // info()
             }else if(cell.innerHTML === "" && infoTurns.turn % 2 === 0 && infoTurns.tokenP2 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
                 game[cell.id] = "X";
-                // checking winner 
-                winner()
                 // take 1 token from the current player 
                 infoTurns.tokenP2--;    
                 infoTurns.turn++
                 // instructions for players
-                info()
+                // info()
             };;
-            sessionStorage.setItem("board", JSON.stringify(game))
-            sessionStorage.setItem("infoTurns", JSON.stringify(infoTurns))
-            sessionStorage.setItem("save", "save")
+            
+            // checking winner 
             winner()
+
+            // instructions for players
+            info()
+
+            // save the actual game in an array inside the session storage 
+            sessionStorage.setItem("board", JSON.stringify(game))
+
+            // save the actual game in an array inside the session storage 
+            sessionStorage.setItem("infoTurns", JSON.stringify(infoTurns))
+
+            // this is the mark that allow the function saveMatchData to set the board game 
+            // as it was before minimize the window 
+            sessionStorage.setItem("save", "save")            
         })
     }
 )
