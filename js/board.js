@@ -13,6 +13,72 @@ player2.innerHTML = `${name2}`
 
 /////////////////   TIC TAC TOE ////////////////////
 
+// array: current board status 
+
+let game = ["", "", "", "", "", "", "", "", ""]
+
+// this function set the game board array data saved in session storage from string to array again 
+
+// let boardInfo = sesionStorage.getItem("board")
+// console.log(boardInfo)
+
+// const gameSavedData = () => {
+//     boardInfo = JSON.parse(sesionStorage.getItem("board"))
+//     console.log(boardInfo)
+
+//     for(let i = 0; i < boardInfo.length; i++){
+
+//     console.log(boardInfo[i])
+
+//     switch(boardInfo[i]){
+
+//         case "O":
+
+//             game.push(boardInfo[i])
+
+//         break;
+//         case "X":
+
+//             game.push(boardInfo[i])
+
+//         break;
+//         default:
+//     };
+// };
+// boardInfo =boardInfo.slice(9)
+// console.log(boardInfo)
+// };
+
+
+// in case you minimized the "window" this is all the data of the previous game
+
+const saveMatchData = () => {
+
+    game = JSON.parse(sessionStorage.getItem("board"))
+
+    for(let i = 0 ; i < game.length; i++){
+
+        let setToken = document.getElementById(`${[i]}`)
+
+        
+
+        switch(game[i]){
+            case "O":
+                setToken.innerHTML = '<img src="../assets/circle.png" class="token" alt="">'
+            break;
+            case "X":
+                setToken.innerHTML = '<img src="../assets/cross.png" class="token" alt="">'
+            break;
+            default:
+                setToken.innerHTML = ""
+        };
+    };
+    
+    // turn = parseInt(sessionStorage.getItem(`turn`))
+    infoTurns = JSON.parse(sessionStorage.getItem("infoTurns"))
+
+};
+
 // WINNER VALIDATION
 
 // array; victory chek 
@@ -71,79 +137,96 @@ infoP2.innerHTML = "Wait until your turn"
 // function: information for the players during the game
 
 const info = () => {
-    if(turn % 2 !== 0 && tokenP1 === 0 && turn > 6){
+
+    if(infoTurns.turn % 2 !== 0 && infoTurns.tokenP1 === 0 && infoTurns.turn > 6){
         infoP1.innerHTML = "Choose a token of your own"
         infoP2.innerHTML = "Wait until your next turn"
-    }else if(turn % 2 === 0 && tokenP2 === 0 && turn > 6){
+    }else if(infoTurns.turn % 2 === 0 && infoTurns.tokenP2 === 0 && infoTurns.turn > 6){
         infoP2.innerHTML = "Choose a token of your own"
         infoP1.innerHTML = "Wait until your next turn"
-    }else if(turn % 2 !== 0){
+    }else if(infoTurns.turn % 2 !== 0){
         infoP2.innerHTML = "Wait until your next turn"
         infoP1.innerHTML = "Set a token on the board"
-    }else if (turn % 2 === 0){
+    }else if (infoTurns.turn % 2 === 0){
         infoP1.innerHTML = "Wait until your next turn"
         infoP2.innerHTML = "Set a token on the board"
     };
-
 
 };
 
 // DIFFERENT INDEX THAT ARE IMPORTANT TO RUN THE GAME 
 
-let turn = 1;
+let infoTurns = {
+    turn: 1,
 
-let tokenP1 = 3
-let tokenP2 = 3
+    tokenP1: 3,
+    tokenP2: 3
+}
+// let turn = 1;
+
+// let tokenP1 = 3
+// let tokenP2 = 3
 
 // THE GAME
 
 // building board
 let board = Array.from(document.getElementsByClassName("cellDesign"));
 
-// array: current board status 
-let game = ["", "", "", "", "", "", "", "", ""]
-
 // mapping board 
+
+// first step is to check if there was a game going on before minimize the "window" and set the board
+
+let checkMatchData = sessionStorage.getItem("save")
+
+if (checkMatchData === "save"){
+    saveMatchData()
+};
+
+console.log(infoTurns.turn)
+console.log(infoTurns.tokenP1)
+console.log(infoTurns.tokenP2)
+
+// now we can play 
 
 board.map(
     (cell) => {
         cell.addEventListener('click', () => {
             // to set tokens before both playes has 3 tokens in game 
-            if(cell.innerHTML === "" && turn <= 6){
+            if(cell.innerHTML === "" && infoTurns.turn <= 6){
                 // to paint the cell 
-                turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
+                infoTurns.turn % 2 !== 0 ? cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">' : cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
-                turn % 2 !== 0 ? game[cell.id] = "O" : game[cell.id] = "X";
+                infoTurns.turn % 2 !== 0 ? game[cell.id] = "O" : game[cell.id] = "X";
                 // checking winner 
                 winner()
                 // take 1 token from the current player 
-                turn % 2 !== 0 ? tokenP1-- : tokenP2--;    
-                turn++
+                infoTurns.turn % 2 !== 0 ? infoTurns.tokenP1-- : infoTurns.tokenP2--;    
+                infoTurns.turn++
                 // instructions for players
                 info()
             }
             // to retire a "O" token 
-            else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && turn % 2 !== 0  && tokenP1 === 0){
+            else if (cell.innerHTML === '<img src="../assets/circle.png" class="token" alt="">' && infoTurns.turn % 2 !== 0  && infoTurns.tokenP1 === 0){
                 // to clean the cell 
                 cell.innerHTML = "";
                 // to clean place in the array 
                 game[cell.id] = "";
                 // give one token to the current player 
-                tokenP1 ++
+                infoTurns.tokenP1 ++
                 // instructions for players
                 info()
             }
             // to retire a "X" token 
-            else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && turn % 2 === 0 && turn > 6 && tokenP2 === 0){
+            else if (cell.innerHTML === '<img src="../assets/cross.png" class="token" alt="">' && infoTurns.turn % 2 === 0 && infoTurns.turn > 6 && infoTurns.tokenP2 === 0){
                 // to clean the cell 
                 cell.innerHTML = "";
                 // to clean place in the array 
                 game[cell.id] = "";
                 // give one token to the current player 
-                tokenP2 ++
+                infoTurns.tokenP2 ++
                 // instructions for players
                 info()
-            }else if(cell.innerHTML === "" && turn % 2 !== 0 && tokenP1 === 1 && turn > 6){
+            }else if(cell.innerHTML === "" && infoTurns.turn % 2 !== 0 && infoTurns.tokenP1 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/circle.png" class="token" alt="">';
                 // to set place in the game array
@@ -151,11 +234,11 @@ board.map(
                 // checking winner 
                 winner()
                 // take 1 token from the current player 
-                tokenP1--;    
-                turn++
+                infoTurns.tokenP1--;    
+                infoTurns.turn++
                 // instructions for players
                 info()
-            }else if(cell.innerHTML === "" && turn % 2 === 0 && tokenP2 === 1 && turn > 6){
+            }else if(cell.innerHTML === "" && infoTurns.turn % 2 === 0 && infoTurns.tokenP2 === 1 && infoTurns.turn > 6){
                 // to paint the cell 
                 cell.innerHTML = '<img src="../assets/cross.png" class="token" alt="">';
                 // to set place in the game array
@@ -163,11 +246,13 @@ board.map(
                 // checking winner 
                 winner()
                 // take 1 token from the current player 
-                tokenP2--;    
-                turn++
+                infoTurns.tokenP2--;    
+                infoTurns.turn++
                 // instructions for players
                 info()
             };;
+            sessionStorage.setItem("board", JSON.stringify(game))
+            sessionStorage.setItem("infoTurns", JSON.stringify(infoTurns))
         })
     }
 )
