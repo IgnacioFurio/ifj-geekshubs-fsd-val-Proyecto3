@@ -1,7 +1,20 @@
 .message{
-    font-size: 3em;
+    font-size: 2em;
     margin: 0.5em;
 }
 .nameWinner{
-    font-size: 4.5em;
+    font-size: 2.5em;
 }
+/*buttons  */
+.buttonsContainer{
+    margin: 0em;
+    padding-top: 0em;
+}
+    .shapeButtons{
+        height: 1em;
+        width: 100%;
+    }
+            .styleButton{
+                height: 2em;
+                width: 50%;
+            }

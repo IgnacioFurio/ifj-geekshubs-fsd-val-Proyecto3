@@ -17,50 +17,19 @@ player2.innerHTML = `${name2}`
 
 let game = ["", "", "", "", "", "", "", "", ""]
 
-// this function set the game board array data saved in session storage from string to array again 
-
-// let boardInfo = sesionStorage.getItem("board")
-// console.log(boardInfo)
-
-// const gameSavedData = () => {
-//     boardInfo = JSON.parse(sesionStorage.getItem("board"))
-//     console.log(boardInfo)
-
-//     for(let i = 0; i < boardInfo.length; i++){
-
-//     console.log(boardInfo[i])
-
-//     switch(boardInfo[i]){
-
-//         case "O":
-
-//             game.push(boardInfo[i])
-
-//         break;
-//         case "X":
-
-//             game.push(boardInfo[i])
-
-//         break;
-//         default:
-//     };
-// };
-// boardInfo =boardInfo.slice(9)
-// console.log(boardInfo)
-// };
-
-
 // in case you minimized the "window" this is all the data of the previous game
 
 const saveMatchData = () => {
-
+    
+    // take the game board array data saved from session storage
     game = JSON.parse(sessionStorage.getItem("board"))
+    
+    // take the turn and token object data saved from local storage
+    infoTurns = JSON.parse(sessionStorage.getItem("infoTurns"))
 
     for(let i = 0 ; i < game.length; i++){
 
-        let setToken = document.getElementById(`${[i]}`)
-
-        
+        let setToken = document.getElementById(`${[i]}`)        
 
         switch(game[i]){
             case "O":
@@ -74,9 +43,6 @@ const saveMatchData = () => {
         };
     };
     
-    // turn = parseInt(sessionStorage.getItem(`turn`))
-    infoTurns = JSON.parse(sessionStorage.getItem("infoTurns"))
-
 };
 
 // WINNER VALIDATION
@@ -156,16 +122,13 @@ const info = () => {
 
 // DIFFERENT INDEX THAT ARE IMPORTANT TO RUN THE GAME 
 
+// general info of tokens and turns 
 let infoTurns = {
     turn: 1,
 
     tokenP1: 3,
     tokenP2: 3
 }
-// let turn = 1;
-
-// let tokenP1 = 3
-// let tokenP2 = 3
 
 // THE GAME
 
@@ -182,15 +145,13 @@ if (checkMatchData === "save"){
     saveMatchData()
 };
 
-console.log(infoTurns.turn)
-console.log(infoTurns.tokenP1)
-console.log(infoTurns.tokenP2)
-
 // now we can play 
-
+info()
 board.map(
     (cell) => {
         cell.addEventListener('click', () => {
+            
+            console.log(infoTurns.turn)
             // to set tokens before both playes has 3 tokens in game 
             if(cell.innerHTML === "" && infoTurns.turn <= 6){
                 // to paint the cell 
@@ -253,6 +214,8 @@ board.map(
             };;
             sessionStorage.setItem("board", JSON.stringify(game))
             sessionStorage.setItem("infoTurns", JSON.stringify(infoTurns))
+            sessionStorage.setItem("save", "save")
+            winner()
         })
     }
 )

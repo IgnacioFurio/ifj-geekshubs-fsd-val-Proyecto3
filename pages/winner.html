@@ -39,21 +39,18 @@
         <!-- buttons  -->
         <div class="buttonsContainer">
             <div class="shapeButtons">
-                <button class="styleButton color1">
-                    <a href="../pages/gameBoard.html" class="linkWidth" style="color: black; text-decoration: none; font-weight: 600; font-size: larger;">
-                        NEW MATCH
-                    </a>                    
-                </button>
+                <div class="styleButton color1" onclick="newMatch()">
+                    <p class="fontButton"> NEW MATCH </p>                  
+                </div>
             </div>
             <div class="shapeButtons">
-                <button class="styleButton color2">
-                    <a href="../pages/playerSelect.html" class="linkWidth" style="color: black; text-decoration: none; font-weight: 600; font-size: larger;">
-                        NEW GAME
-                    </a>                    
-                </button>
+                <div class="styleButton color2" onclick="newGame()">
+                        <p class="fontButton">NEW GAME</p> 
+                </div>
             </div>
         </div>
     </div>
+    <!-- windows task bar  -->
     <div class="taskBar">
         <div class="homeW95">
             <div>
@@ -61,7 +58,7 @@
             </div>
             <div class="startW95">start</div>
         </div>
-        <div class="tab">
+        <div class="tab" onclick="minimizeWinner()">
             <div>
                 <img src="../assets/icon.jpg" class="iconW95" alt="">
             </div>
@@ -69,5 +66,7 @@
         </div>
     </div>
     <script src="../js/winner.js"></script>
+    <script src="../js/taskbarTab.js"></script>
+    <script src="../js/buttons.js"></script>
 </body>
 </html>

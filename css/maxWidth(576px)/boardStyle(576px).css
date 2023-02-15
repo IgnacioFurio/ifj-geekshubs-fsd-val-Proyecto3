@@ -15,6 +15,7 @@
                 /* restart button  */
             .buttonsContainer{
                 margin: 0em;
+                padding: 0em;
             }
             
                 .shapeButtons{
@@ -22,8 +23,8 @@
                     width: 90%;
                 }
                     .styleButton{
-                        height: 3.5em;
-                        width: 60%;
+                        height: 2em;
+                        width: 70%;
                     }
 
             /* table board  */

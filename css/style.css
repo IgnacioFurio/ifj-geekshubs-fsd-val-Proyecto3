@@ -78,6 +78,48 @@ body{
             justify-content: center;
         }
 
+            /*buttons  */
+
+            .buttonsContainer{
+                margin: 1em;
+                padding-top: 1em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+                .shapeButtons{
+                    height: 2em;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                }
+
+                    .styleButton{                            
+                        height: 2.5em;
+                        width: 100%;
+                        margin: 1em;
+                        display: flex;
+                        align-items:center;
+                        cursor: pointer;
+                    }
+                    .fontButton{
+                        width: 100%;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                        /* button new match  */
+                        .color1{
+                            background-color: rgb(96, 195, 34);
+                            border: outset rgb(114, 231, 41);
+                        }
+                        /* button new game  */
+                        .color2{
+                            background-color: rgb(253, 154, 154);
+                            border: outset rgb(253, 165, 165);
+                        }
+
         /* windows task bar  */
         .taskBar{
             height: 25px;

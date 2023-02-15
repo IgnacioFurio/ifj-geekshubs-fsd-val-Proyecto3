@@ -20,10 +20,24 @@ const minimizeGameBoard = () =>{
 
 const expandGameBoard = () =>{
 
-    let expand = true;
     window.location.href = '../pages/gameBoard.html'
 
 };
+
+
+const minimizeWinner = () =>{
+
+    window.location.href = '../pages/winnerMinimized.html'
+
+};
+
+const expandWinner = () =>{
+
+    window.location.href = '../pages/winner.html'
+
+};
+
+
 
 
 
