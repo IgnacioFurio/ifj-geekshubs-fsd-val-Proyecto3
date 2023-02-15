@@ -1,5 +1,11 @@
 // functions that allow to emulate windows as W95 OS 
 
+const close = () => {
+
+    window.location.href = '../index.html'
+
+};
+
 const minimizePlayerSelect = () =>{
 
     window.location.href = '../pages/playerSelectMinimized.html'
