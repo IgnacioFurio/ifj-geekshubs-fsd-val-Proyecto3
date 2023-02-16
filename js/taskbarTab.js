@@ -1,8 +1,10 @@
 // functions that allow to emulate windows as W95 OS 
 
-const close = () => {
+const closetab = () => {
 
+    sessionStorage.clear();
     window.location.href = '../index.html'
+
 
 };
 

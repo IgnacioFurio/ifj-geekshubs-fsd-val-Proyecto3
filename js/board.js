@@ -212,7 +212,7 @@ board.map(
             // save the actual game in an array inside the session storage 
             sessionStorage.setItem("board", JSON.stringify(game))
 
-            // save the actual game in an array inside the session storage 
+            // save the actual game in an object inside the session storage 
             sessionStorage.setItem("infoTurns", JSON.stringify(infoTurns))
 
             // this is the mark that allow the function saveMatchData to set the board game 
