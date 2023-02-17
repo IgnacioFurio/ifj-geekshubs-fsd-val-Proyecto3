@@ -11,13 +11,13 @@
 
 
 ## 1 Acerca del proyecto / About this project
-Este es el tercer proyecto realizado para Geeks Hubs Academy. He tenido que desarrollar un Tres en Raya (Tic Tac Toe) que funcione y con uno requisitos minimos:
+Este es el tercer proyecto realizado para Geeks Hubs Academy. He tenido que desarrollar un Tres en Raya (Tic Tac Toe) que funcione y con uno requisitos mínimos:
 
 - Páginas creadas para la Interfaz de Usuario (índice, selección de jugadoras/es, tablero de juego y ganadror/a).
 - Poder establecer los nombres de los jugadores/as a través de una entrada, y jugar usando esos nombres.
-- Una función que compruebe quíen gana.
+- Una función que compruebe quien gana.
 
-Mi diseño esta inspirado en el Sistema Operativo de Windows 95, más específicamente, queria que el juego luciera como el Buscaminas (Minesweeper), pero como si lo jugaras en un PC con W95 instalado. Esto me ha dado la oportunidad de añadir algunas características extras al juego, como  el comportamienmto de ventanas o incluso de la barra de tareas.
+Mi diseño esta inspirado en el Sistema Operativo de Windows 95, más específicamente, quería que el juego luciera como el Buscaminas (Minesweeper), pero como sí lo jugaras en un PC con W95 instalado. Esto me ha dado la oportunidad de añadir algunas características extras al juego, como  el comportamiento de ventanas o incluso de la barra de tareas.
 
 ¡¡¡¡Te recomiendo que dejes la timidez a un lado y lo pruebes!!!!.
 
@@ -25,10 +25,10 @@ Mi diseño esta inspirado en el Sistema Operativo de Windows 95, más específic
 
 This is the third project made for Geeks Hubs Academy. I must develope a functional Tic Tac Toe with some minimun requirements:
 - Pages created for the User Interface (index, players selection, board game and winner).
-- Being able to set the names of the players through an input, and to play the game using that names.
+- Being able to set the names of the players through an input, and to play the game using those names.
 - A function in JavaScript to check the winner.
 
-I inspired my design on Windows 95 Operative System, to be more specific, i wanted the game to look like the Minesweeper game, but as if you were playing in a PC with W95 installed on it. This gave me the chance to add some features to the game, like the behavior of the windows or even the taskbar. 
+I inspired my design on Windows 95 Operative System, to be more specific, I wanted this game to look like the Minesweeper game, but as if you were playing in a PC with the W95 installed on it. This gave me the chance to add some features to the game, like the behavior of the windows or even the taskbar. 
 
 My recomendation for you, don't be shy and test my game!!!!.
 
@@ -57,25 +57,27 @@ My recomendation for you, don't be shy and test my game!!!!.
 
 ## 4 Personalización / Customization
 
-Todo ha sido cuidadosamente consturido con CSS3, desde las mediaquerys hasta el diseño de los iconos. Además he intentado utilizar la menor cantidad de imagenes posible, ya que realmente queria hacerlo todo usando mis propios medios. Las imágenes son el icono original de W95, el icono del juego y las fichas de jugador.
+Todo ha sido cuidadosamente consturido con CSS3, desde las mediaquerys hasta el diseño de los iconos. Además he intentado utilizar la menor cantidad de imágenes posible, ya que realmente quería hacerlo todo usando mis propios medios. Las imágenes son el icono original de W95, el icono del juego y las fichas de jugador.
 
 ---
 
 
-Everything was set very carefuylly with CSS3, from the mediaquerys to the icons design. Also I've tried to use only a few aseets to this project, i really wanted to build everything by myself. The assets are the originl W95 icon, the game icon and both tokens.
+Everything was set very carefuylly with CSS3, from the mediaquerys to the icons design. Also I've tried to use only a few aseets to this project, i really wanted to build everything by myself. The assets are the original W95 icon, the game icon and both tokens.
 
 ## 5 Como usar la Aplicación / How to run the Aplication
-1. Se ha intentado que todo sea lo más intuitivo posible, es por eso que lo primero que vas a encontrarte es el Escritorio y solo una "Aplicación" para usar.
+1. Se ha intentado que todo sea lo más intuitivo posible, es por eso que lo primero que vas a encontrarte es el "Escritorio" y solo una "Aplicación" para usar.
 2. Una vez has hecho click al icono del juego este dará comienzo, deberías de entrar a la página de Selección de jugadoras/es, dónde podréis introducir vuestros nombres (o apodos) para la partida. Si estais listos, haz click al botón de "Start" de color verde.
 3. Os doy la bienvenida al tablero de juego, aquí podeis ver vuestros nombres y algunas instrucciones que seguir. Para jugar solo tendreis que hacer click en algúna casilla parar rellenara/vaciarla.  Las reglas son sencillas, cada jugador/a dispone de 3 fichas, puedes colocar una ficha por turno, una vez colocadas todas las fichas será momento de cambiar de casilla una de las fichas en el tablero, pero ve con cuidado o podrías perder la partida.
-4. La pantalla final solo se mostrará cuándo alguien gane la partida, asi que....   ¡¡¡¡BUENA SUERTE A TODO EL MUNDO!!!!
+4. Desde esta pantalla en adelante puedes elegir si quieres volver a empezar la partida ("NEW MATCH"), o regresar a la pantalla de Selección de Jugadoras/es ("NEW GAME") simplemente apretando los botones correspondientes.
+5. La pantalla final solo se mostrará cuándo alguien gane la partida, asi que....   ¡¡¡¡BUENA SUERTE A TODO EL MUNDO!!!!
 
 ---
 
-1. Everything was done to be as intuitive as possible, because of that the first thing you will find is the Desktop and only one "Aplication" to use.
+1. Everything was done to be as intuitive as possible, because of that the first thing you will find is the "Desktop" and only one "Aplication" to use.
 2. Once you have clicked to the icon, the game will start, so now you should be at Player Selection page, were you will be able to introduce your name (or a nickname) for the match. If you are ready, click the "Start" green button.
 3. Welcome to the game board, here you can see your player's name and also some information to follow. To play the game you just need to click at the area you want to fill/empty. The rules are easy, every player can only set 3 tokens, you can set one token per turn, once both players have played all 3 tokens it's time to move once existing token to another place, but be carefull with your choice or you will be defeated.
-4. The final screen is only abaliable when a player get to win, so....GOOD LUCK TO EVERYONE!!!!
+4. From now on, you can choose if you want to start again the match ("NEW MATCH"), or go to the Player Selection screen ("NEW GAME") just by pressing the corresponding button.
+5. The final screen is only abaliable when a player get to win, so....GOOD LUCK TO EVERYONE!!!!
 
 ## 6 Contacto / Contact
 
