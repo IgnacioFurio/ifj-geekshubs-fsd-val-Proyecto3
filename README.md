@@ -76,7 +76,7 @@ Everything was set very carefuylly with CSS3, from the mediaquerys to the icons 
 1. Everything was done to be as intuitive as possible, because of that the first thing you will find is the "Desktop" and only one "Aplication" to use.
 2. Once you have clicked to the icon, the game will start, so now you should be at Player Selection page, were you will be able to introduce your name (or a nickname) for the match. If you are ready, click the "Start" green button.
 3. Welcome to the game board, here you can see your player's name and also some information to follow. To play the game you just need to click at the area you want to fill/empty. The rules are easy, every player can only set 3 tokens, you can set one token per turn, once both players have played all 3 tokens it's time to move once existing token to another place, but be carefull with your choice or you will be defeated.
-4. From now on, you can choose if you want to start again the match ("NEW MATCH"), or go to the Player Selection screen ("NEW GAME") just by pressing the corresponding button.
+4. From now on, you can choose if you want to start again the match ("NEW MATCH"), or to come back to the Player Selection screen ("NEW GAME") just by pressing the corresponding button.
 5. The final screen is only abaliable when a player get to win, so....GOOD LUCK TO EVERYONE!!!!
 
 ## 6 Contacto / Contact
