@@ -41,6 +41,8 @@
         .startGameButton{
             height: 100%;
             width: 100%;
+            font-weight: 600;
+            font-size: x-large;
             background-color: rgb(96, 195, 34);
             border: outset rgb(114, 231, 41);
             cursor: pointer;
