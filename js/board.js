@@ -157,7 +157,6 @@ board.map(
     (cell) => {
         cell.addEventListener('click', () => {
             
-            console.log(infoTurns.turn)
             // to set tokens before both playes has 3 tokens in game 
             if(cell.innerHTML === "" && infoTurns.turn <= 6){
                 // to paint the cell 
